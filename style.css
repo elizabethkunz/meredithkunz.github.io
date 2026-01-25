@@ -1,0 +1,244 @@
+
+:root{
+    --primary:#84c7e7;   /* baby blue */
+    --accent:#B89B5E;    /* muted gold */
+    --cream:#F8F5EE;     /* off-white cream */
+    --ink:#161c1e;       /* warm near-black */
+    --ink-soft:#3a342d;
+    --radius:18px;
+    --shadow:0 8px 24px rgba(30,27,22,.08);
+}
+html{scroll-behavior:smooth}
+body{
+    margin:0; color:var(--ink); background:var(--cream);
+    font-family:'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    line-height:1.6; font-size:16px;
+    text-rendering:optimizeLegibility;
+}
+h1,h2,h3,.brand{
+    font-family:'Cardo', Georgia, serif; letter-spacing:.02em;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:3px solid var(--primary); outline-offset:2px; border-radius:6px;
+}
+
+/* Layout */
+.container{max-width:1100px; margin:0 auto; padding:0 20px}
+
+/* Header / Nav */
+header{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:saturate(160%) blur(8px);
+    background:color-mix(in oklab, var(--cream) 86%, transparent);
+    border-bottom:1px solid color-mix(in oklab, var(--accent) 25%, transparent);
+}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand{font-weight:700; font-size:20px; color:var(--accent)}
+.menu{display:flex; gap:22px; align-items:center}
+.menu a{padding:6px 4px; border-bottom:2px solid transparent}
+.menu a:hover{border-color:var(--accent)}
+
+/* Mobile nav */
+.menu-toggle{display:none; background:none; border:0; padding:8px; border-radius:10px}
+.menu-toggle span{display:block; width:26px; height:2px; background:var(--ink); margin:6px 0}
+@media (max-width:760px){
+    .menu{display:none}
+    .menu.open{display:flex; flex-direction:column; align-items:flex-start; padding:8px 0}
+    .menu a{padding:8px 0}
+    .menu-toggle{display:inline-flex}
+}
+
+/* Hero */
+.hero{position:relative; padding:84px 0 64px; background:linear-gradient(180deg, color-mix(in oklab, var(--primary) 30%, white) 0%, var(--cream) 65%)}
+.hero .panel{
+    background:var(--cream); border-radius:var(--radius); box-shadow:var(--shadow);
+    padding:28px; border:1.5px solid color-mix(in oklab, var(--accent) 55%, transparent);
+}
+.lead{color:var(--ink-soft)}
+.cta{
+    display:inline-block; margin-top:18px; padding:12px 18px; border-radius:999px;
+    background:var(--accent); color:white; font-weight:700; letter-spacing:.02em;
+    border:1px solid color-mix(in oklab, black 10%, var(--accent));
+    box-shadow:0 6px 16px rgba(184,155,94,.25);
+}
+.cta:hover{filter:brightness(1.02)}
+
+/* Section shells */
+section{padding:40px 0}
+.section-title{position:relative; margin:0 0 22px; font-size:32px}
+.section-title::after{
+    content:""; position:absolute; left:0; bottom:-10px; width:92px; height:4px; border-radius:999px; background:var(--accent);
+}
+
+/* Cards */
+.card{background:var(--cream); border-radius:var(--radius); box-shadow:var(--shadow); padding:24px; border:1.5px solid color-mix(in oklab, var(--accent) 45%, transparent)}
+
+/* Decorative Greek-ish key divider (subtle) */
+.divider{height:16px; margin:28px 0; background:
+    repeating-linear-gradient(90deg,
+    color-mix(in oklab, var(--accent) 80%, white) 0 8px,
+    transparent 8px 16px),
+    linear-gradient(0deg, color-mix(in oklab, var(--primary) 25%, white), color-mix(in oklab, var(--primary) 25%, white));
+    border-radius:8px; opacity:.45
+}
+
+/* About */
+.about-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:28px}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+.accent-pill{display:inline-block; padding:4px 10px; border-radius:999px; background:color-mix(in oklab, var(--primary) 30%, white); border:1px solid color-mix(in oklab, var(--primary) 65%, white)}
+
+/* Contact */
+form{display:grid; gap:14px}
+label{font-weight:700; font-family:'Cardo', Georgia, serif}
+input, textarea{
+    width:100%; padding:12px 14px; border-radius:12px; border:1.5px solid color-mix(in oklab, var(--accent) 40%, #ccc);
+    background:color-mix(in oklab, var(--cream) 85%, white);
+    font:inherit; color:inherit;
+}
+textarea{min-height:140px; resize:vertical}
+.btn{
+    justify-self:start; padding:12px 18px; border-radius:999px; border:1.5px solid color-mix(in oklab, var(--accent) 55%, black 10%);
+    background:var(--primary); font-weight:700;
+    box-shadow:0 6px 16px rgba(142,202,230,.25);
+}
+.btn:hover{filter:brightness(1.03)}
+
+/* Footer */
+footer{padding:36px 0; border-top:1px solid color-mix(in oklab, var(--accent) 25%, transparent); color:var(--ink-soft); font-size:14px}
+
+
+.two-panels {
+  display: flex;
+  gap: 2rem;            /* space between the two boxes */
+  flex-wrap: wrap;      /* allows stacking on small screens */
+}
+
+.panel {
+  flex: 1;              /* each takes equal width */
+  padding: 1.5rem;
+  background: #f9f9f9;  /* just an example */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+#home .container {
+  display: flex;
+  align-items: center;     /* vertically center image with text */
+  justify-content: space-between;
+  gap: 2rem;               /* space between text and image */
+}
+
+
+#home .portrait {
+  max-width: 250px;        /* adjust size as needed */
+  height: auto;
+  border-radius: 8px;      /* optional: rounded corners */
+}
+
+#home .panel {
+  flex: 1;
+}
+
+
+
+
+.bookimg {
+  max-width: 300px;        /* adjust size as needed */
+  height: auto;
+  border-radius: 8px;      /* optional: rounded corners */
+}
+
+
+.bookimg:hover {
+  opacity: 0.7; /* adjust value (0 = invisible, 1 = full) */
+}
+
+.social-logos {
+  display: flex;
+  justify-content: center; /* center the logos */
+  gap: 1.5rem;             /* space between them */
+  margin: 2rem 0;          /* space above and below */
+  max-width: "40px";
+  opacity:0.7;
+}
+
+.social-logos img {
+  width: 30px;  /* adjust logo size */
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.social-logos img:hover {
+  opacity: 0.7; /* fade on hover */
+}
+
+
+#coaching .container {
+  display: flex;
+  align-items: center;     /* vertically center image with text */
+  justify-content: space-between;
+  gap: 2rem;               /* space between text and image */
+}
+
+#coaching .portrait {
+  max-width: 250px;        /* adjust size as needed */
+  height: auto;
+  border-radius: 8px;      /* optional: rounded corners */
+}
+
+#coaching .portrait:hover {
+    opacity: 0.7; 
+}
+
+
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter .3s ease;
+}
+
+/* Darken image on hover */
+.gallery-item:hover img {
+  filter: brightness(60%);
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none; /* prevents blocking hover */
+}
+
+/* Show text when hovering */
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+
+
